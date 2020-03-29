@@ -17,5 +17,23 @@ class CarnegieCov::CLI
     puts "\n#{@@blu}Welcome to The Carnegie Covington!#{@@white}\n"
   end 
   
+  def get_user_input
+    input = nil 
+    while input != "exit"
+      puts "\n#{@@grn}Which would you like more info on?\n#{@@white}"
+      input = gets.strip.downcase 
+      
+      if input.to_i > 0 
+        shops = @shops[input.to_i-1]
+        puts "#{@address}"
+        #puts "#{@shop.address}"
+      elsif input == "categories"
+        list_shops
+      else 
+        puts "I'm sorry, I do not recognize your response"
+      end 
+    end 
+  end 
+  
 end 
   
