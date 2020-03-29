@@ -13,4 +13,9 @@ class CarnegieCov::CLI
     goodbye
   end 
   
+  def list_categories
+    puts "\n#{@@blu}Welcome to The Carnegie Covington!#{@@white}\n"
+  end 
+  
+end 
   
