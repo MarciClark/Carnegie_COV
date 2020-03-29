@@ -1,4 +1,4 @@
-require "carnegie_cov/version"
+require_relative "./carnegie_cov/version"
 require_relative "./carnegie_cov/cli"
 require_relative "./carnegie_cov/gallery"
 require_relative "./carnegie_cov/scraper"
