@@ -8,13 +8,18 @@ class CarnegieCov::CLI
   @@white="\e[0m"
   
   def call 
-    list_categories 
+    list_categories
+    get_categories
     user_input
     goodbye
   end 
   
   def list_categories
     puts "\n#{@@blu}Welcome to The Carnegie Covington!#{@@white}\n"
+  end 
+  
+  def get_categories
+    @categories = CarnegieCov::Categories.all
   end 
   
   def user_input
