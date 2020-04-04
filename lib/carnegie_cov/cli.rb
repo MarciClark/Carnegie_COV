@@ -17,7 +17,7 @@ class CarnegieCov::CLI
     puts "\n#{@@blu}Welcome to The Carnegie Covington!#{@@white}\n"
   end 
   
-  def get_user_input
+  def user_input
     input = nil 
     while input != "exit"
       puts "\n#{@@grn}Which would you like more info on?\n#{@@white}"
@@ -33,6 +33,10 @@ class CarnegieCov::CLI
         puts "I'm sorry, I do not recognize your response"
       end 
     end 
+  end 
+  
+  def goodbye
+    puts "Have a beautiful day!"
   end 
   
 end 
