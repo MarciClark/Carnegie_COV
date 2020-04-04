@@ -9,10 +9,10 @@ class CarnegieCov::Scraper
   end 
   
   def self.scrape_exhibit
-    doc = Nokogiri::HTML(open("https://twodrifters.us/blog/best-coffee-shops-in-cincinnati-ohio.html"))
+    doc = Nokogiri::HTML(open(""))
     
     exhibit = self.new 
-    carnegie_exhibit = doc.css("div.arconix-box.arconix-box-gray").text.gsub(/\t/, "")
+    carnegie_exhibit = doc.css("").text.gsub(/\t/, "")
     
     exhibit
   end 
