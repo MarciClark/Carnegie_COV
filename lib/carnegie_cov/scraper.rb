@@ -1,11 +1,11 @@
 class CarnegieCov::Scraper
   
-  attr_accessor :category, :exhibit, :performance, :url
+  attr_accessor :category, :exhibit, :camp, :production, :url
   
-  def self.categories
-    doc = Nokogiri::HTML(open("https://sprudge.com/a-coffee-drinkers-guide-to-cincinnati-141292.html"))
+  def self.scrape_categories
+    doc = Nokogiri::HTML(open("http://www.thecarnegie.com/"))
  
-    shop = doc.css("p.strong")
+    shop = doc.css("div.exhibition")
   end 
   
   def self.scrape_exhibit
@@ -17,13 +17,21 @@ class CarnegieCov::Scraper
     exhibit
   end 
   
-  def self.scrape_performance
+  def self.scrape_camp
+    doc = Nokogiri::HTML(open(""))
+    
+    camp = self.new 
+    carnegie_camp = doc.css("").text.gsub(/\t/, "")
+    camp
+  end 
+  
+  def self.scrape_production
     doc = Nokogiri::HTML(open("https://twodrifters.us/blog/best-coffee-shops-in-cincinnati-ohio.html"))
     
-    performance = self.new 
-    carnegie_performance = doc.css("div.arconix-box.arconix-box-gray").text.gsub(/\t/, "")
+    production = self.new 
+    carnegie_production = doc.css("div.arconix-box.arconix-box-gray").text.gsub(/\t/, "")
     
-    performance
+    production
   end 
   
 end
