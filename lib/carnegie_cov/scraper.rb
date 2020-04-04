@@ -26,10 +26,10 @@ class CarnegieCov::Scraper
   end 
   
   def self.scrape_production
-    doc = Nokogiri::HTML(open("https://twodrifters.us/blog/best-coffee-shops-in-cincinnati-ohio.html"))
+    doc = Nokogiri::HTML(open(""))
     
     production = self.new 
-    carnegie_production = doc.css("div.arconix-box.arconix-box-gray").text.gsub(/\t/, "")
+    carnegie_production = doc.css("").text.gsub(/\t/, "")
     
     production
   end 
