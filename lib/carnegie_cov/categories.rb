@@ -1,13 +1,11 @@
 class CarnegieCov::Categories
   
-  attr_accessor :name, :prodictions, :camps, :exhibits
+  attr_accessor :name
+  
   @@all = []
    
   def initialize(name)
     @name = name
-    @productions = []
-    @camps = []
-    @exhibits = []
     @@all << self
   end 
  

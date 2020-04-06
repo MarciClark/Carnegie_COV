@@ -19,6 +19,9 @@ class CarnegieCov::CLI
   end 
   
   def get_categories
+    CarnegieCov::Categories.new("exhibits")
+    CarnegieCov::Categories.new("productions")
+    CarnegieCov::Categories.new("camp")
     @categories = CarnegieCov::Categories.all
   end 
   
@@ -29,9 +32,9 @@ class CarnegieCov::CLI
       input = gets.strip.downcase 
       
       if input.to_i > 0 
-        shops = @shops[input.to_i-1]
-        puts "#{@address}"
-        #puts "#{@shop.address}"
+        categories = @categories[input.to_i-1]
+        puts "#{@exhibits}"
+        #puts "#{@category.exhibit}"
       elsif input == "categories"
         list_shops
       else 
