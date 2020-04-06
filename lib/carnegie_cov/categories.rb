@@ -28,7 +28,4 @@ class CarnegieCov::Categories
     CarnegieCov::Scraper.scrape_exhibits(self) if @exhibits.empty?
   end 
   
-  def save
-    @@all << self
-  end
 end 
