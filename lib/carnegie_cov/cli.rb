@@ -9,21 +9,28 @@ class CarnegieCov::CLI
   
   def call 
     list_categories
-    get_categories
+    # get_categories
     user_input
     goodbye
   end 
   
   def list_categories
     puts "\n#{@@blu}Welcome to The Carnegie Covington!#{@@white}\n"
+    CarnegieCov::Categories.new("Exhibits")
+    CarnegieCov::Categories.new("Productions")
+    CarnegieCov::Categories.new("Camp")
+    @categories = CarnegieCov::Categories.all
+    @categories.each.with_index(1) do |category, index| 
+      puts "#{index}. #{category}"
+    end
   end 
   
-  def get_categories
-    CarnegieCov::Categories.new("exhibits")
-    CarnegieCov::Categories.new("productions")
-    CarnegieCov::Categories.new("camp")
-    @categories = CarnegieCov::Categories.all
-  end 
+  # def get_categories
+  #   CarnegieCov::Categories.new("exhibits")
+  #   CarnegieCov::Categories.new("productions")
+  #   CarnegieCov::Categories.new("camp")
+  #   @categories = CarnegieCov::Categories.all
+  # end 
   
   def user_input
     input = nil 
