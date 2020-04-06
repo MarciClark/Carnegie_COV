@@ -21,7 +21,7 @@ class CarnegieCov::CLI
     CarnegieCov::Categories.new("Camp")
     @categories = CarnegieCov::Categories.all
     @categories.each.with_index(1) do |category, index| 
-      puts "#{index}. #{category}"
+      puts "#{index}. #{category.name}"
     end
   end 
   
