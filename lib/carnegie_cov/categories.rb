@@ -8,7 +8,7 @@ class CarnegieCov::Categories
     @productions = []
     @camps = []
     @exhibits = []
-    save
+    @@all << self
   end 
  
   def self.all
