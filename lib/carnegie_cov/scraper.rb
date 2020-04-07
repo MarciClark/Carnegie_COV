@@ -34,26 +34,25 @@ class CarnegieCov::Scraper
   #   production
   # end 
   
-  def self.this_week
-    self.scrape_bestsellers
+  def self.carnegie_programs
+    self.scrape_categories
   end 
   
-  def self.scrape_bestsellers
-    bestsellers = []
+  def self.scrape_categories
+    categories = []
     
-    bestsellers << self.scrape_fiction
-    bestsellers << self.scrape_nonfiction
-    bestsellers << self.scrape_childrens
+    categories << self.scrape_gallery
+    categories << self.scrape_education
+    categories << self.scrape_theatre
   end 
   
-  def self.scrape_fiction
-    doc = Nokogiri::HTML(open("https://www.barnesandnoble.com/b/the-new-york-times-bestsellers-hardcover-fiction/_/N-1p3r"))
+  def self.scrape_gallery
+    doc = Nokogiri::HTML(open(""))
     
-    fiction = self.new 
-    title = doc.css("div.product-shelf-title.pr-m").text.gsub(/\t/, "")
-    author = doc.css("div.product-shelf-author.contributors").text.gsub(/\t/, "")
+    gallery = self.new 
+    current_exhibition = doc.css("").text.gsub(/\t/, "")
     
-    fiction
+    gallery
   end 
   
   def self.scrape_nonfiction
