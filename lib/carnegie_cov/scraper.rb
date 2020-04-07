@@ -47,10 +47,10 @@ class CarnegieCov::Scraper
   end 
   
   def self.scrape_gallery
-    doc = Nokogiri::HTML(open(""))
+    doc = Nokogiri::HTML(open("http://www.thecarnegie.com/gallery.php"))
     
     gallery = self.new 
-    current_exhibition = doc.css("").text.gsub(/\t/, "")
+    current_exhibition = doc.css("div.exhibition").text.gsub(/\t/, "")
     
     gallery
   end 
