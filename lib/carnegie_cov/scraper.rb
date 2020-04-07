@@ -55,24 +55,22 @@ class CarnegieCov::Scraper
     gallery
   end 
   
-  def self.scrape_nonfiction
-    doc = Nokogiri::HTML(open("https://www.barnesandnoble.com/b/the-new-york-times-bestsellers-hardcover-nonfiction/_/N-1p5q"))
+  def self.scrape_education
+    doc = Nokogiri::HTML(open(""))
     
-    nonfiction = self.new
-    title = doc.css("div.product-shelf-title.pr-m h3.product-info-title a").text.gsub(/\t/, "")
-    author = doc.css("div.product-shelf-author.contributors").text.gsub(/\t/, "")
+    education = self.new
+    summer_camp = doc.css("").text.gsub(/\t/, "")
     
-    nonfiction
+    summer_camp
   end 
   
-  def self.scrape_childrens
-    doc = Nokogiri::HTML(open("https://www.barnesandnoble.com/b/the-new-york-times-bestsellers-childrens-picture-books/_/N-1p3p"))
+  def self.scrape_theatre
+    doc = Nokogiri::HTML(open(""))
     
-    childrens = self.new
-    title = doc.css("div.product-shelf-title.pr-m").text.gsub(/\t/, "")
-    author = doc.css("div.product-shelf-author.contributors").text.gsub(/\t/, "")
+    theatre = self.new
+    current_production = doc.css("").text.gsub(/\t/, "")
     
-    childrens
+    current_production
   end 
   
 end
