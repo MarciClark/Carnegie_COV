@@ -60,7 +60,7 @@ class CarnegieCov::Scraper
     education = self.new
     summer_camp = doc.css("").text.gsub(/\t/, "")
     
-    summer_camp
+    education
   end 
   
   def self.scrape_theatre
@@ -69,7 +69,7 @@ class CarnegieCov::Scraper
     theatre = self.new
     current_production = doc.css("").text.gsub(/\t/, "")
     
-    current_production
+    theatre
   end 
   
 end
