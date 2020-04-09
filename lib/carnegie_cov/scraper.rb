@@ -47,26 +47,27 @@ class CarnegieCov::Scraper
   end 
   
   def self.scrape_gallery
-    # doc = Nokogiri::HTML(open("http://www.thecarnegie.com/exhibition.php"))
-    # gallery = self.new 
-    # current_exhibition = doc.css("div.exhibition").text.gsub(/\t/, "")
+    doc = Nokogiri::HTML(open("http://www.thecarnegie.com/exhibition.php"))
+    gallery = self.new 
+    current_exhibition = doc.css("div.exhibition").text.gsub(/\t/, "")
     
-    # gallery
+    gallery
+  end 
     
-    url = 'http://www.thecarnegie.com/exhibition.php'
-    begin
-      file = open(url)
-      doc = Nokogiri::HTML(file) do
-        # handle doc
-      end
-    rescue OpenURI::HTTPError => e
-      if e.message == '404 Not Found'
-        # handle 404 error
-      else
-        raise e
-      end
-    end
-  end
+  #   url = 'http://www.thecarnegie.com/exhibition.php'
+  #   begin
+  #     file = open(url)
+  #     doc = Nokogiri::HTML(file) do
+  #       # handle doc
+  #     end
+  #   rescue OpenURI::HTTPError => e
+  #     if e.message == '404 Not Found'
+  #       # handle 404 error
+  #     else
+  #       raise e
+  #     end
+  #   end
+  # end
   
   def self.scrape_education
     doc = Nokogiri::HTML(open(""))
